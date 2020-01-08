@@ -1,0 +1,1 @@
+# iOS Conf Sponsor iOS App (2020 Edition)
