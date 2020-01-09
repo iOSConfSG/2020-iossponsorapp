@@ -17,6 +17,10 @@
 		D137892023C5CEE6001653C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D137891E23C5CEE6001653C0 /* LaunchScreen.storyboard */; };
 		D137892B23C5CEE6001653C0 /* iosconfsponsor2020Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D137892A23C5CEE6001653C0 /* iosconfsponsor2020Tests.swift */; };
 		D137893823C5D1DB001653C0 /* CredentialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D137893723C5D1DB001653C0 /* CredentialManager.swift */; };
+		D14FD12F23C720BD0024FF1E /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14FD12E23C720BD0024FF1E /* QRScannerViewController.swift */; };
+		D14FD13223C721AE0024FF1E /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14FD13023C721AE0024FF1E /* CameraPreviewView.swift */; };
+		D14FD13323C721AE0024FF1E /* CameraOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14FD13123C721AE0024FF1E /* CameraOverlayView.swift */; };
+		D14FD13723C72A070024FF1E /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14FD13623C72A070024FF1E /* FormViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		D137892A23C5CEE6001653C0 /* iosconfsponsor2020Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosconfsponsor2020Tests.swift; sourceTree = "<group>"; };
 		D137892C23C5CEE6001653C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D137893723C5D1DB001653C0 /* CredentialManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialManager.swift; sourceTree = "<group>"; };
+		D14FD12E23C720BD0024FF1E /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
+		D14FD13023C721AE0024FF1E /* CameraPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
+		D14FD13123C721AE0024FF1E /* CameraOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraOverlayView.swift; sourceTree = "<group>"; };
+		D14FD13623C72A070024FF1E /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		E0F3203936C0570C3F6300C3 /* Pods-iosconfsponsor2020.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsponsor2020.debug.xcconfig"; path = "Target Support Files/Pods-iosconfsponsor2020/Pods-iosconfsponsor2020.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,10 +125,14 @@
 				D137891523C5CEE4001653C0 /* SceneDelegate.swift */,
 				D137891723C5CEE4001653C0 /* ViewController.swift */,
 				D137893723C5D1DB001653C0 /* CredentialManager.swift */,
+				D14FD12E23C720BD0024FF1E /* QRScannerViewController.swift */,
+				D14FD13123C721AE0024FF1E /* CameraOverlayView.swift */,
+				D14FD13023C721AE0024FF1E /* CameraPreviewView.swift */,
 				D137891923C5CEE4001653C0 /* Main.storyboard */,
 				D137891C23C5CEE6001653C0 /* Assets.xcassets */,
 				D137891E23C5CEE6001653C0 /* LaunchScreen.storyboard */,
 				D137892123C5CEE6001653C0 /* Info.plist */,
+				D14FD13623C72A070024FF1E /* FormViewController.swift */,
 			);
 			path = iosconfsponsor2020;
 			sourceTree = "<group>";
@@ -302,9 +314,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D14FD12F23C720BD0024FF1E /* QRScannerViewController.swift in Sources */,
 				D137893823C5D1DB001653C0 /* CredentialManager.swift in Sources */,
+				D14FD13223C721AE0024FF1E /* CameraPreviewView.swift in Sources */,
+				D14FD13323C721AE0024FF1E /* CameraOverlayView.swift in Sources */,
 				D137891823C5CEE4001653C0 /* ViewController.swift in Sources */,
 				D137891423C5CEE4001653C0 /* AppDelegate.swift in Sources */,
+				D14FD13723C72A070024FF1E /* FormViewController.swift in Sources */,
 				D137891623C5CEE4001653C0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

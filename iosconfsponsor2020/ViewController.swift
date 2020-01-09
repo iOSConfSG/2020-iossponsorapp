@@ -17,6 +17,12 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         if !CredentialManager.shared.hasValid() {
             presentLogin()
+        } else {
+            showQRScanner()
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
+            self.didCapture(qrcode: "Nikhil, he is awesome")
         }
     }
 }
@@ -38,6 +44,7 @@ extension ViewController {
             CredentialManager.shared.store(credentials: credentials)
             CredentialManager.shared.getUserProfile()
             print("Obtained credentials \(credentials)")
+            self.showQRScanner()
         }
         .onError {
           print("Failed with \($0)")
@@ -50,6 +57,37 @@ extension ViewController {
         DispatchQueue.main.async {
             self.present(loginViewController, animated: true, completion: nil)
         }
+    }
+
+    private func showQRScanner() {
+        let qrScannerViewController = QRScannerViewController.instantiate()
+        addChild(qrScannerViewController)
+        qrScannerViewController.view.frame = view.bounds
+        qrScannerViewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(qrScannerViewController.view)
+        qrScannerViewController.didMove(toParent: self)
+        qrScannerViewController.delegate = self
+    }
+}
+
+extension ViewController: QRScannerViewControllerDelegate {
+    func didTapTurnOnCamera() {
+        //noop
+    }
+
+    func didCapture(qrcode: String) {
+        let values = qrcode.split(separator: ",")
+        var result = ["", "", ""]
+        for (i, val) in values.enumerated() {
+            result[i] = String(val)
+        }
+
+        let attendee = Attendee.init(name: result[0],
+                                     email: result[1],
+                                     company: result[2])
+
+        let formViewController = FormViewController.instantiate(attendee: attendee)
+        present(formViewController, animated: true, completion: nil)
     }
 }
 
