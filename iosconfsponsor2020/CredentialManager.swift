@@ -19,7 +19,11 @@ class CredentialManager {
                                     session: URLSession.shared)
     }
     private let credentialManager = CredentialsManager(authentication: auth0Authentication)
-    private var profile: UserInfo?
+    private var profile: UserInfo? {
+        didSet {
+            userId = profile?.sub
+        }
+    }
 
     private init() { }
 

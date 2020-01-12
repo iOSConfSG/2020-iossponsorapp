@@ -36,6 +36,7 @@ extension ViewController {
         .withOptions {
           $0.oidcConformant = true
           $0.scope = "openid profile offline_access email user_metadata"
+          $0.allow = [.Login]
         }
         .withConnections {
             $0.database(name: "Username-Password-Authentication", requiresUsername: true)

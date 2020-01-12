@@ -8,6 +8,8 @@ target 'iosconfsponsor2020' do
   # Pods for iosconfsponsor2020
   pod 'Auth0', '~> 1.19'
   pod 'Lock', '~> 2.0'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Database'
 
   target 'iosconfsponsor2020Tests' do
     inherit! :search_paths

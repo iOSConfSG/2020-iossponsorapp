@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 struct Attendee {
     var name: String?
@@ -43,7 +44,17 @@ class FormViewController: UIViewController {
 
 extension FormViewController  {
     @IBAction func saveButtonAction() {
-        // save to firebase
+        CredentialManager.shared.getUserProfile()
+        guard let userID = CredentialManager.shared.userId else {
+            return
+        }
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        var attendeeData = ["name": attendee.name, "email": attendee.email]
+        if attendee.company != "" {
+            attendeeData["company"] = attendee.company
+        }
+        ref.child("users").child(userID).setValue(["user": attendeeData])
     }
 
     @IBAction func cancelButtonAction() {
