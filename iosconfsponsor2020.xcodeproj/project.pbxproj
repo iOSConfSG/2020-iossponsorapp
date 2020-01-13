@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31E54D7C23CCA5FF002C31A5 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E54D7B23CCA5FF002C31A5 /* Secrets.swift */; };
 		81EE24860623AE186B19BA83 /* Pods_iosconfsponsor2020.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998CAB1B2E609E8A6081172A /* Pods_iosconfsponsor2020.framework */; };
 		CFADE0A0995ECEC5850DD036 /* Pods_iosconfsponsor2020Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECD2F98A7914CFC5E4CD1BC /* Pods_iosconfsponsor2020Tests.framework */; };
 		D137891423C5CEE4001653C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D137891323C5CEE4001653C0 /* AppDelegate.swift */; };
@@ -22,7 +23,6 @@
 		D14FD13323C721AE0024FF1E /* CameraOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14FD13123C721AE0024FF1E /* CameraOverlayView.swift */; };
 		D14FD13723C72A070024FF1E /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14FD13623C72A070024FF1E /* FormViewController.swift */; };
 		D1ED1E9323CB717C0028E09B /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ED1E9223CB717C0028E09B /* UITextFieldExtension.swift */; };
-		D1ED1E9523CC4AE40028E09B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1ED1E9423CC4AE40028E09B /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		289F51CBA6A8AF2BE92634D7 /* Pods-iosconfsponsor2020Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsponsor2020Tests.debug.xcconfig"; path = "Target Support Files/Pods-iosconfsponsor2020Tests/Pods-iosconfsponsor2020Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		31E54D7B23CCA5FF002C31A5 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		7BE19591A40579FA01AD6ECD /* Pods-iosconfsponsor2020Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsponsor2020Tests.release.xcconfig"; path = "Target Support Files/Pods-iosconfsponsor2020Tests/Pods-iosconfsponsor2020Tests.release.xcconfig"; sourceTree = "<group>"; };
 		7ECD2F98A7914CFC5E4CD1BC /* Pods_iosconfsponsor2020Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosconfsponsor2020Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		998CAB1B2E609E8A6081172A /* Pods_iosconfsponsor2020.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosconfsponsor2020.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,7 +59,6 @@
 		D14FD13123C721AE0024FF1E /* CameraOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraOverlayView.swift; sourceTree = "<group>"; };
 		D14FD13623C72A070024FF1E /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		D1ED1E9223CB717C0028E09B /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
-		D1ED1E9423CC4AE40028E09B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E0F3203936C0570C3F6300C3 /* Pods-iosconfsponsor2020.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsponsor2020.debug.xcconfig"; path = "Target Support Files/Pods-iosconfsponsor2020/Pods-iosconfsponsor2020.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,7 +137,7 @@
 				D137891923C5CEE4001653C0 /* Main.storyboard */,
 				D137891C23C5CEE6001653C0 /* Assets.xcassets */,
 				D137891E23C5CEE6001653C0 /* LaunchScreen.storyboard */,
-				D1ED1E9423CC4AE40028E09B /* GoogleService-Info.plist */,
+				31E54D7B23CCA5FF002C31A5 /* Secrets.swift */,
 				D137892123C5CEE6001653C0 /* Info.plist */,
 			);
 			path = iosconfsponsor2020;
@@ -160,6 +160,7 @@
 			buildConfigurationList = D137892F23C5CEE6001653C0 /* Build configuration list for PBXNativeTarget "iosconfsponsor2020" */;
 			buildPhases = (
 				B2B12AFEB9BC971DB1B2C4CF /* [CP] Check Pods Manifest.lock */,
+				31E54D7D23CCA95D002C31A5 /* Inject Variables */,
 				D137890C23C5CEE4001653C0 /* Sources */,
 				D137890D23C5CEE4001653C0 /* Frameworks */,
 				D137890E23C5CEE4001653C0 /* Resources */,
@@ -237,7 +238,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D137892023C5CEE6001653C0 /* LaunchScreen.storyboard in Resources */,
-				D1ED1E9523CC4AE40028E09B /* GoogleService-Info.plist in Resources */,
 				D137891D23C5CEE6001653C0 /* Assets.xcassets in Resources */,
 				D137891B23C5CEE4001653C0 /* Main.storyboard in Resources */,
 			);
@@ -253,6 +253,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		31E54D7D23CCA95D002C31A5 /* Inject Variables */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Inject Variables";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "sh $SRCROOT/inject.sh\n";
+		};
 		8151EF78604CFA61FC66B57E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -322,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D14FD12F23C720BD0024FF1E /* QRScannerViewController.swift in Sources */,
+				31E54D7C23CCA5FF002C31A5 /* Secrets.swift in Sources */,
 				D1ED1E9323CB717C0028E09B /* UITextFieldExtension.swift in Sources */,
 				D137893823C5D1DB001653C0 /* CredentialManager.swift in Sources */,
 				D14FD13223C721AE0024FF1E /* CameraPreviewView.swift in Sources */,
@@ -492,7 +511,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6XT986E2SZ;
+				DEVELOPMENT_TEAM = EHW7L3679R;
 				INFOPLIST_FILE = iosconfsponsor2020/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -513,7 +532,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6XT986E2SZ;
+				DEVELOPMENT_TEAM = EHW7L3679R;
 				INFOPLIST_FILE = iosconfsponsor2020/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

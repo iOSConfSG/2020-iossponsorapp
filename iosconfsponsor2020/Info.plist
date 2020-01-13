@@ -2,6 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>auth0ClientID</key>
+	<string>$(auth0ClientID)</string>
+	<key>auth0domain</key>
+	<string>$(auth0domain)</string>
+	<key>googleAppID</key>
+	<string>$(googleAppID)</string>
+	<key>gcmSenderID</key>
+	<string>$(gcmSenderID)</string>
+	<key>googleApiKey</key>
+	<string>$(googleApiKey)</string>
+	<key>googleClientID</key>
+	<string>$(googleClientID)</string>
+	<key>googleDatabaseURL</key>
+	<string>$(googleDatabaseURL)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

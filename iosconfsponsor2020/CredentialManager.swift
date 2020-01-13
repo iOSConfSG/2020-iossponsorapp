@@ -12,8 +12,8 @@ import Auth0
 class CredentialManager {
     static var shared: CredentialManager = CredentialManager()
     private static var auth0Authentication: Authentication {
-        return Auth0.authentication(clientId: "*",
-                                    domain: "*",
+        return Auth0.authentication(clientId: Secrets.auth0ClientID,
+                                    domain: Secrets.auth0domain,
                                     session: URLSession.shared)
     }
     private let credentialManager = CredentialsManager(authentication: auth0Authentication)

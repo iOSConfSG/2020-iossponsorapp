@@ -31,11 +31,11 @@ class ViewController: UIViewController {
 extension ViewController {
     private func presentLogin() {
         let lock = Lock
-        .classic(clientId: "*", domain: "*")
+        .classic(clientId: Secrets.auth0ClientID, domain: Secrets.auth0domain)
         .withOptions {
           $0.oidcConformant = true
           $0.scope = "openid profile offline_access email user_metadata"
-          $0.allow = [.Login]
+            $0.allow = [.Login, .ResetPassword]
         }
         .withConnections {
             $0.database(name: "Username-Password-Authentication", requiresUsername: true)
