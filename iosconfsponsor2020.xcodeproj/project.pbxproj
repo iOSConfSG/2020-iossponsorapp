@@ -17,6 +17,12 @@
 		D137892023C5CEE6001653C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D137891E23C5CEE6001653C0 /* LaunchScreen.storyboard */; };
 		D137892B23C5CEE6001653C0 /* iosconfsponsor2020Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D137892A23C5CEE6001653C0 /* iosconfsponsor2020Tests.swift */; };
 		D137893823C5D1DB001653C0 /* CredentialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D137893723C5D1DB001653C0 /* CredentialManager.swift */; };
+		D14FD12F23C720BD0024FF1E /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14FD12E23C720BD0024FF1E /* QRScannerViewController.swift */; };
+		D14FD13223C721AE0024FF1E /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14FD13023C721AE0024FF1E /* CameraPreviewView.swift */; };
+		D14FD13323C721AE0024FF1E /* CameraOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14FD13123C721AE0024FF1E /* CameraOverlayView.swift */; };
+		D14FD13723C72A070024FF1E /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14FD13623C72A070024FF1E /* FormViewController.swift */; };
+		D1ED1E9323CB717C0028E09B /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ED1E9223CB717C0028E09B /* UITextFieldExtension.swift */; };
+		D1ED1E9523CC4AE40028E09B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1ED1E9423CC4AE40028E09B /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +41,7 @@
 		7ECD2F98A7914CFC5E4CD1BC /* Pods_iosconfsponsor2020Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosconfsponsor2020Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		998CAB1B2E609E8A6081172A /* Pods_iosconfsponsor2020.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosconfsponsor2020.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B696114C24F572E23D45E0C6 /* Pods-iosconfsponsor2020.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsponsor2020.release.xcconfig"; path = "Target Support Files/Pods-iosconfsponsor2020/Pods-iosconfsponsor2020.release.xcconfig"; sourceTree = "<group>"; };
-		D137891023C5CEE4001653C0 /* iosconfsponsor2020.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosconfsponsor2020.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D137891023C5CEE4001653C0 /* SG Sponsor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SG Sponsor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D137891323C5CEE4001653C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D137891523C5CEE4001653C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D137891723C5CEE4001653C0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +53,12 @@
 		D137892A23C5CEE6001653C0 /* iosconfsponsor2020Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosconfsponsor2020Tests.swift; sourceTree = "<group>"; };
 		D137892C23C5CEE6001653C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D137893723C5D1DB001653C0 /* CredentialManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialManager.swift; sourceTree = "<group>"; };
+		D14FD12E23C720BD0024FF1E /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
+		D14FD13023C721AE0024FF1E /* CameraPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
+		D14FD13123C721AE0024FF1E /* CameraOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraOverlayView.swift; sourceTree = "<group>"; };
+		D14FD13623C72A070024FF1E /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		D1ED1E9223CB717C0028E09B /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		D1ED1E9423CC4AE40028E09B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E0F3203936C0570C3F6300C3 /* Pods-iosconfsponsor2020.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsponsor2020.debug.xcconfig"; path = "Target Support Files/Pods-iosconfsponsor2020/Pods-iosconfsponsor2020.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,7 +116,7 @@
 		D137891123C5CEE4001653C0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D137891023C5CEE4001653C0 /* iosconfsponsor2020.app */,
+				D137891023C5CEE4001653C0 /* SG Sponsor.app */,
 				D137892623C5CEE6001653C0 /* iosconfsponsor2020Tests.xctest */,
 			);
 			name = Products;
@@ -117,9 +129,15 @@
 				D137891523C5CEE4001653C0 /* SceneDelegate.swift */,
 				D137891723C5CEE4001653C0 /* ViewController.swift */,
 				D137893723C5D1DB001653C0 /* CredentialManager.swift */,
+				D14FD12E23C720BD0024FF1E /* QRScannerViewController.swift */,
+				D14FD13123C721AE0024FF1E /* CameraOverlayView.swift */,
+				D14FD13023C721AE0024FF1E /* CameraPreviewView.swift */,
+				D14FD13623C72A070024FF1E /* FormViewController.swift */,
+				D1ED1E9223CB717C0028E09B /* UITextFieldExtension.swift */,
 				D137891923C5CEE4001653C0 /* Main.storyboard */,
 				D137891C23C5CEE6001653C0 /* Assets.xcassets */,
 				D137891E23C5CEE6001653C0 /* LaunchScreen.storyboard */,
+				D1ED1E9423CC4AE40028E09B /* GoogleService-Info.plist */,
 				D137892123C5CEE6001653C0 /* Info.plist */,
 			);
 			path = iosconfsponsor2020;
@@ -153,7 +171,7 @@
 			);
 			name = iosconfsponsor2020;
 			productName = iosconfsponsor2020;
-			productReference = D137891023C5CEE4001653C0 /* iosconfsponsor2020.app */;
+			productReference = D137891023C5CEE4001653C0 /* SG Sponsor.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D137892523C5CEE6001653C0 /* iosconfsponsor2020Tests */ = {
@@ -219,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D137892023C5CEE6001653C0 /* LaunchScreen.storyboard in Resources */,
+				D1ED1E9523CC4AE40028E09B /* GoogleService-Info.plist in Resources */,
 				D137891D23C5CEE6001653C0 /* Assets.xcassets in Resources */,
 				D137891B23C5CEE4001653C0 /* Main.storyboard in Resources */,
 			);
@@ -302,9 +321,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D14FD12F23C720BD0024FF1E /* QRScannerViewController.swift in Sources */,
+				D1ED1E9323CB717C0028E09B /* UITextFieldExtension.swift in Sources */,
 				D137893823C5D1DB001653C0 /* CredentialManager.swift in Sources */,
+				D14FD13223C721AE0024FF1E /* CameraPreviewView.swift in Sources */,
+				D14FD13323C721AE0024FF1E /* CameraOverlayView.swift in Sources */,
 				D137891823C5CEE4001653C0 /* ViewController.swift in Sources */,
 				D137891423C5CEE4001653C0 /* AppDelegate.swift in Sources */,
+				D14FD13723C72A070024FF1E /* FormViewController.swift in Sources */,
 				D137891623C5CEE4001653C0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,17 +490,19 @@
 			baseConfigurationReference = E0F3203936C0570C3F6300C3 /* Pods-iosconfsponsor2020.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 65MBUH3H85;
+				DEVELOPMENT_TEAM = 6XT986E2SZ;
 				INFOPLIST_FILE = iosconfsponsor2020/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = sg.iosconf.iosconfsponsor2020;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = sg.com.swarup.sg2020;
+				PRODUCT_NAME = "SG Sponsor";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -485,17 +511,19 @@
 			baseConfigurationReference = B696114C24F572E23D45E0C6 /* Pods-iosconfsponsor2020.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 65MBUH3H85;
+				DEVELOPMENT_TEAM = 6XT986E2SZ;
 				INFOPLIST_FILE = iosconfsponsor2020/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = sg.iosconf.iosconfsponsor2020;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = sg.com.swarup.sg2020;
+				PRODUCT_NAME = "SG Sponsor";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
