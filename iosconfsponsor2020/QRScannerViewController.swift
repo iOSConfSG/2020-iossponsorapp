@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import SafariServices
 
 protocol QRScannerViewControllerDelegate: class {
     func didCapture(qrcode: String)
@@ -190,7 +191,7 @@ extension QRScannerViewController {
         // display alert that you dont have a rear device
     }
 
-    func showSettingsAlert() {
+    @IBAction func showSettingsAlert() {
         // display settings alert
         let title = "Allow camera access"
         let message = "Go to Settings and enable camera"
@@ -213,6 +214,20 @@ extension QRScannerViewController {
         alertController.addAction(settingsAction)
 
         self.present(alertController, animated: true, completion: nil)
+    }
+
+    @IBAction func makeButtonDoSomethingUseful() {
+        let url: URL! = URL(string: "https://2020.iosconf.sg/schedule/")
+        let safariViewController = SFSafariViewController(url: url)
+        safariViewController.delegate = self
+        present(safariViewController, animated: true, completion: nil)
+    }
+}
+
+// MARK: - SFSafariViewControllerDelegate
+extension QRScannerViewController: SFSafariViewControllerDelegate {
+    public func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        dismiss(animated: true, completion: nil)
     }
 }
 

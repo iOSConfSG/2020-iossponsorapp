@@ -11,19 +11,13 @@ import Auth0
 
 class CredentialManager {
     static var shared: CredentialManager = CredentialManager()
-    var userId: String?
-
     private static var auth0Authentication: Authentication {
         return Auth0.authentication(clientId: "*",
                                     domain: "*",
                                     session: URLSession.shared)
     }
     private let credentialManager = CredentialsManager(authentication: auth0Authentication)
-    private var profile: UserInfo? {
-        didSet {
-            userId = profile?.sub
-        }
-    }
+    private(set) var profile: UserInfo? 
 
     private init() { }
 
@@ -54,8 +48,7 @@ class CredentialManager {
 
         retrieve { credentials in
             guard let accessToken = credentials?.accessToken else { return }
-            Auth0
-                .authentication()
+            CredentialManager.auth0Authentication
                 .userInfo(withAccessToken: accessToken)
                 .start { result in
                     switch result {

@@ -8,8 +8,12 @@
 
 import UIKit
 import Lock
+import Firebase
+import MBProgressHUD
 
 class ViewController: UIViewController {
+    var qrScannerViewController: QRScannerViewController?
+    @IBOutlet var logoutButton: UIButton!
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -20,10 +24,6 @@ class ViewController: UIViewController {
         } else {
             showQRScanner()
         }
-
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
-            self.didCapture(qrcode: "Nikhil, he is awesome")
-        }
     }
 }
 
@@ -31,8 +31,7 @@ class ViewController: UIViewController {
 extension ViewController {
     private func presentLogin() {
         let lock = Lock
-        .classic()
-        // withConnections, withOptions, withStyle, and so on
+        .classic(clientId: "*", domain: "*")
         .withOptions {
           $0.oidcConformant = true
           $0.scope = "openid profile offline_access email user_metadata"
@@ -68,6 +67,27 @@ extension ViewController {
         view.addSubview(qrScannerViewController.view)
         qrScannerViewController.didMove(toParent: self)
         qrScannerViewController.delegate = self
+        self.view.bringSubviewToFront(self.logoutButton)
+
+        self.qrScannerViewController = qrScannerViewController
+    }
+
+    @IBAction func didTapLogOut() {
+        _ = CredentialManager.shared.clear()
+        presentLogin()
+    }
+
+    private func showHUD() {
+        let imageview = UIImageView.init(image: UIImage.init(named: "Checkmark")?.withRenderingMode(.alwaysTemplate))
+        let hud = MBProgressHUD.showAdded(to: view, animated: true)
+        hud.customView = imageview
+        hud.mode = .customView
+        hud.label.text = "Saved"
+        hud.show(animated: true)
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
+            hud.hide(animated: true)
+        })
     }
 }
 
@@ -77,7 +97,12 @@ extension ViewController: QRScannerViewControllerDelegate {
     }
 
     func didCapture(qrcode: String) {
-        let values = qrcode.split(separator: ",")
+        guard let data = Data(base64Encoded: qrcode) else {
+            return
+        }
+
+        let value = String(data: data, encoding: .utf8)
+        let values = value?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).split(separator: ",") ?? []
         var result = ["", "", ""]
         for (i, val) in values.enumerated() {
             result[i] = String(val)
@@ -85,10 +110,28 @@ extension ViewController: QRScannerViewControllerDelegate {
 
         let attendee = Attendee.init(name: result[0],
                                      email: result[1],
-                                     company: result[2])
+                                     additionalData: result[2])
 
         let formViewController = FormViewController.instantiate(attendee: attendee)
-        present(formViewController, animated: true, completion: nil)
+        formViewController.dismissAction = {
+            self.qrScannerViewController?.startSession()
+        }
+        formViewController.saveAction =  {
+            self.qrScannerViewController?.startSession()
+            self.showHUD()
+        }
+        let navigationController = UINavigationController.init(rootViewController: formViewController)
+        navigationController.presentationController?.delegate = self
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: true, completion: nil)
     }
 }
 
+// MARK: - UIAdaptivePresentationControllerDelegate
+extension ViewController: UIAdaptivePresentationControllerDelegate {
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        if self.qrScannerViewController?.parent != nil {
+            self.qrScannerViewController?.startSession()
+        }
+    }
+}

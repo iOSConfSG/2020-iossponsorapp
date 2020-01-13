@@ -8,20 +8,27 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
+import CryptoSwift
 
-struct Attendee {
+struct Attendee: Encodable {
     var name: String?
     var email: String?
-    var company: String?
+    var additionalData: String?
 }
 
 class FormViewController: UIViewController {
 
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var emailTextField: UITextField!
-    @IBOutlet var companyTextField: UITextField!
+    @IBOutlet var additionalInfoTextView: UITextView!
+
+    @IBOutlet var saveButton: UIButton!
+    @IBOutlet var cancelButton: UIButton!
 
     var attendee: Attendee!
+    var dismissAction: (() -> Void)?
+    var saveAction: (() -> Void)?
 
     // MARK: - Init
     class func instantiate(attendee: Attendee) -> FormViewController {
@@ -35,29 +42,58 @@ class FormViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        configure()
 
         nameTextField.text = attendee.name
         emailTextField.text = attendee.email
-        companyTextField.text = attendee.company
+        additionalInfoTextView.text = attendee.additionalData
+
+        CredentialManager.shared.getUserProfile()
+    }
+
+    private func configure() {
+        self.title = "Attendee Details"
+        _ = [nameTextField, emailTextField, additionalInfoTextView].map { $0?.setAppTheme() }
+        saveButton.layer.cornerRadius = 5.0
+        cancelButton.layer.cornerRadius = 5.0
     }
 }
 
 extension FormViewController  {
     @IBAction func saveButtonAction() {
-        CredentialManager.shared.getUserProfile()
-        guard let userID = CredentialManager.shared.userId else {
+        attendee.name = nameTextField.text
+        attendee.email = emailTextField.text
+        attendee.additionalData = additionalInfoTextView.text
+        guard let name = CredentialManager.shared.profile?.name,
+            let email = attendee.email else {
             return
         }
-        var ref: DatabaseReference!
-        ref = Database.database().reference()
-        var attendeeData = ["name": attendee.name, "email": attendee.email]
-        if attendee.company != "" {
-            attendeeData["company"] = attendee.company
+
+        var attendeeData = [
+            "name": self.attendee.name,
+            "email": self.attendee.email
+        ]
+        if self.attendee.additionalData?.isEmpty == false {
+            attendeeData["additionalData"] = self.attendee.additionalData
         }
-        ref.child("users").child(userID).setValue(["user": attendeeData])
+
+        Auth.auth().signInAnonymously() { (authResult, error) in
+            var ref: DatabaseReference!
+            ref = Database.database().reference()
+            ref.child(name).child(email.md5()).setValue(attendeeData)
+            self.dismissOnSave()
+        }
     }
 
     @IBAction func cancelButtonAction() {
-        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: { [weak self] in
+            self?.dismissAction?()
+        })
+    }
+
+    func dismissOnSave() {
+        dismiss(animated: true) { [weak self] in
+            self?.saveAction?()
+        }
     }
 }
