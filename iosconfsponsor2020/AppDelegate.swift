@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         firebaseOptions.bundleID = Bundle.main.bundleIdentifier!
         firebaseOptions.clientID = Secrets.googleClientID
         firebaseOptions.databaseURL = Secrets.googleDatabaseURL
+        firebaseOptions.googleAppID = Secrets.googleAppID
         FirebaseApp.configure(options: firebaseOptions)
         
         IQKeyboardManager.shared.enable = true
