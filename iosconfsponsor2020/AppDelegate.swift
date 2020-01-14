@@ -16,9 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        FirebaseApp.configure()
+        let firebaseOptions = FirebaseOptions.init(googleAppID: Secrets.googleApiKey, gcmSenderID: Secrets.gcmSenderID)
+        firebaseOptions.apiKey = Secrets.googleApiKey
+        firebaseOptions.bundleID = Bundle.main.bundleIdentifier!
+        firebaseOptions.clientID = Secrets.googleClientID
+        firebaseOptions.databaseURL = Secrets.googleDatabaseURL
+        FirebaseApp.configure(options: firebaseOptions)
+        
         IQKeyboardManager.shared.enable = true
 
+        
         return true
     }
 
